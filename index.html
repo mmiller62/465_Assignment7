@@ -35,14 +35,21 @@
 		
 		<div id="map">
 			<script> 
-			var map = L.map('map').setView([40.752924, -101.821364],5);
+			var map = L.map('map').setView([41.86, -87.66],5);
 			var CartoDB_VoyagerLabelsUnder = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
 				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 				subdomains: 'abcd',
 				maxZoom: 20
 			}).addTo(map);
 
-			$.getJSON("Block_Groups_HOLC.geojson",function(data){L.geoJson(data).addTo(map)})
+			$.getJSON("/Users/meganmiller/Library/CloudStorage/Box-Box/465 - WebGIS/Assignment 7/Block_Groups_HOLC.geojson",function(data){L.geoJson(data {
+				style:function(feature){
+					var conditionalColor;
+					var holc = feature.properties.Chicago__2;
+					if(holc < 0)conditionalColor = "red"
+					else if(holc > 0)conditionalColor="green"	
+				}
+			}).addTo(map)})
 		 </script>
 		</div>
 
