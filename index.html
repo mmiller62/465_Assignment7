@@ -54,7 +54,7 @@
 					else if ( holc > -.25) conditionalColor = "#a6d96a";
 					else if ( holc > -.5) conditionalColor = "#1a9641";
 					else conditionalColor = "#f7f7f7"; 
-				return { color: "#999", weight: .5, fillColor: conditionalColor, fillOpacity: .7 };
+				return { color: "#999", weight: 1, fillColor: conditionalColor, fillOpacity: .4 };
 				},
 				onEachFeature: function( feature, layer ){
 				    layer.bindPopup( "Census Block ID: " + feature.properties.GEOID10 + "<br/>" + "HOLC Index Score: " + feature.properties.Chicago__2 )
